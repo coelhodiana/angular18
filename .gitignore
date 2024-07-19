@@ -1,0 +1,89 @@
+# Node modules
+node_modules/
+
+# Angular build artifacts
+dist/
+out-tsc/
+.angular/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+jspm_packages/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# TypeScript compiled output
+*.js
+*.jsx
+*.js.map
+*.d.ts
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variables file
+.env
+
+# Sentry CLI
+.sentryclirc
+
+# MacOS file
+.DS_Store
+
+# Windows file
+Thumbs.db
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Coverage results
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Angular local configuration
+.angular/
+
+# ESLint cache
+.eslintcache
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Angular CLI config file
+.angular-cli.json
+
+# Compiled output
+*.map
