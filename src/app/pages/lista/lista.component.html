@@ -1,0 +1,77 @@
+<h1>Lista de produtos</h1>
+
+<table mat-table [dataSource]="listaProdutos" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>id</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="unidadeMedida">
+    <th mat-header-cell *matHeaderCellDef>Unidade de Medida</th>
+    <td mat-cell *matCellDef="let element">{{ element.unidadeMedida }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantidade">
+    <th mat-header-cell *matHeaderCellDef>Qtd.</th>
+    <td mat-cell *matCellDef="let element">{{ element.quantidade }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="preco">
+    <th mat-header-cell *matHeaderCellDef>Preço</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.preco | currency:"BRL":true }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="produtoPerecivel">
+    <th mat-header-cell *matHeaderCellDef>Perecível</th>
+    <td mat-cell *matCellDef="let element">{{ element.produtoPerecivel }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataValidade">
+    <th mat-header-cell *matHeaderCellDef>Validade</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.dataValidade | date }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataFabricacao">
+    <th mat-header-cell *matHeaderCellDef>Fabricação</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.dataFabricacao | date }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let element">
+      <div>
+        <button
+          mat-icon-button
+          aria-label="editar produto"
+          (click)="editarProduto(element)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          aria-label="deletar produto"
+          (click)="deletarProduto(element.nome)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<p>{{ listaProdutos.length === 0 ? "Ainda não existem produtos." : "" }}</p>
